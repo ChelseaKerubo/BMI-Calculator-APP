@@ -13,18 +13,41 @@ app.use(express.static('public'));
 //     response.render('home',{name:'Chelsea Kerubo'});
 //  });
 
-app.get('/', function(request ,response){
-    response.render('contact_us');
-});
+// app.get('/', function(request ,response){
+//     response.render('contact_us');
+// });
 
-app.post('/process-contacts', urlEncodedParser, function (request, response){
-    response.end('Thank you ' + request.body.first_name + ' '+ request.body.last_name);
+// app.post('/process-contacts', urlEncodedParser, function (request, response){
+//     response.end('Thank you ' + request.body.first_name + ' '+ request.body.last_name);
     
     
+// });
+
+app.get('/', function(request ,response){
+        response.render('bmi');
+     });
+
+app.post('/bmi-calculate', urlEncodedParser, function (request, response){
+    weigh=parseFloat( request.body.weight)
+    bmi = weigh/ parseFloat(request.body.height * request.body.height);
+
+    if (bmi < 19) {
+        response.end("Hey! "+ "  " + " your BMI is around: " + bmi + "  " + " You are Underweight!");
+    } else if (19 <= bmi && bmi < 25) {
+        response.end("Hey! " + "  " +" your BMI is around: " + bmi + "  " +" You are Normalweight!");
+    } else if (25 <= bmi && bmi < 30) {
+        response.end("Hey! " +"  " + " your BMI is around: " + bmi+ "  " + " You are Overweight!");
+    } else {
+        response.end("Hey! " + "  " +" your BMI is around: " + bmi + "  " +" You are Obese!");
+    }
+
+    
+
 });
 
 app.listen(port);
 console.log('server is listening at port 3000');
+
 
 
 
