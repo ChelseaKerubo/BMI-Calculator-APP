@@ -1,7 +1,7 @@
 h1 {
     text-align: center;
   }
-  input {
+input {
     padding: .5em .6em;
     display: inline-block;
     border: 1px solid #ccc;
@@ -12,11 +12,11 @@ h1 {
     width:300px;
   }
 
-  form {
+form {
     margin-bottom:10px;
   }
 
-  button {
+button {
     height: 31px;
     width: 110px;
     text-align: center;
@@ -33,3 +33,6 @@ h1 {
     border: 1px solid #FE7880;
     color: #FE7880;
   }
+.container{
+    background-color: aqua;
+}
