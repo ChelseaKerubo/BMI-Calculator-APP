@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port =3000;
+const port =process.env.PORT || 3000;
 const bodyParser= require('body-Parser');
 const { response } = require('express');
 const urlEncodedParser =bodyParser.urlencoded({extended:false})
@@ -23,6 +23,7 @@ app.use(express.static('public'));
     
     
 // });
+// 
 
 app.get('/', function(request ,response){
         response.render('bmi');
@@ -47,7 +48,7 @@ app.post('/bmi-calculate', urlEncodedParser, function (request, response){
 });
 
 app.listen(port);
-console.log('server is listening at port 3000');
+console.log('server is listening at port ${port}');
 
 
 
