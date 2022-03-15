@@ -5,6 +5,7 @@ const bodyParser= require('body-Parser');
 const { response } = require('express');
 const urlEncodedParser =bodyParser.urlencoded({extended:false})
 
+
 app.set('views', 'views');
 app.set('view engine','hbs');
 app.use(express.static('public'));
@@ -32,13 +33,13 @@ app.post('/bmi-calculate', urlEncodedParser, function (request, response){
     bmi = weigh/ parseFloat(request.body.height * request.body.height);
 
     if (bmi < 19) {
-        response.end("Hey! "+ "  " + " your BMI is around: " + bmi + "  " + " You are Underweight!");
+        response.end("Hey!"+ " " + "your BMI is around: " + bmi + "  " + " You are Underweight!");
     } else if (19 <= bmi && bmi < 25) {
-        response.end("Hey! " + "  " +" your BMI is around: " + bmi + "  " +" You are Normalweight!");
+        response.end("Hey!" +" " +"your BMI is around: " + bmi + "  " +" You are Normalweight!");
     } else if (25 <= bmi && bmi < 30) {
-        response.end("Hey! " +"  " + " your BMI is around: " + bmi+ "  " + " You are Overweight!");
+        response.end("Hey!" +" " + "your BMI is around: " + bmi+ "  " + " You are Overweight!");
     } else {
-        response.end("Hey! " + "  " +" your BMI is around: " + bmi + "  " +" You are Obese!");
+        response.end("Hey!"+ " " +"your BMI is around: " + bmi + "  " +" You are Obese!");
     }
 
     
