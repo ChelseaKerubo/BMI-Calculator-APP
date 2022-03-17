@@ -26,11 +26,7 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.12.12
         with:
          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-<<<<<<< HEAD
-         heroku_app_name: "bmi-aaplication-chelsea"
-=======
          heroku_app_name: "bmi-application-chelsea"
->>>>>>> 1b469f58f74fd36106b6dbdd5d918d6d137d084f
          heroku_email: "chelseakerubo1@gmail.com"
       
       
