@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const port =process.env.PORT || 3000;
-const bodyParser= require('body-Parser');
+const bodyParser= require('body-parser');
 const { response } = require('express');
 const urlEncodedParser =bodyParser.urlencoded({extended:false})
 
@@ -9,6 +9,7 @@ const urlEncodedParser =bodyParser.urlencoded({extended:false})
 app.set('views', 'views');
 app.set('view engine','hbs');
 app.use(express.static('public'));
+app.use(express.static('bmi'));
 
 // app.get('/', function(request ,response){
 //     response.render('home',{name:'Chelsea Kerubo'});
@@ -28,7 +29,9 @@ app.use(express.static('public'));
 app.get('/', function(request ,response){
         response.render('bmi');
      });
-
+// app.get('/', function(request,reponse){
+//     response.render('bmi-calculate');
+// });
 app.post('/bmi-calculate', urlEncodedParser, function (request, response){
     weigh=parseFloat( request.body.weight)
     bmi = weigh/ parseFloat(request.body.height * request.body.height);
@@ -42,9 +45,6 @@ app.post('/bmi-calculate', urlEncodedParser, function (request, response){
     } else {
         response.end("Hey!"+ " " +"your BMI is around: " + bmi + "  " +" You are Obese!");
     }
-
-    
-
 });
 
 app.listen(port);
