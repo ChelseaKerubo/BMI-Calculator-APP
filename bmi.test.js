@@ -1,4 +1,4 @@
-const { bmicalc} =require('./bmi');
+const { bmicalc} = require('./bmi-calc');
 
 // test.each([[20,7,0],[40,1,40],[20,1,20]])(
 //     '%i  weight / %i  height, Your BMI is %i ',(a,b,expected)=>{
