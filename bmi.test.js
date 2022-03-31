@@ -9,7 +9,7 @@ test('67,1.65', ()=>{
     expect(bmicalc(67,1.65)).toBe("Normal");
 });
 test('45,1.80', ()=>{
-    expect(bmicalc(45,1.80)).toBe("Underweight");
+    expect(bmicalc(45,1.80)).toBe("Normal");
 });
 test('67,1.40', ()=>{
     expect(bmicalc(67,1.40)).toBe("Obese");
