@@ -48,7 +48,7 @@ app.post('/bmi-calculate', urlEncodedParser, function (request, response){
 });
 
 app.listen(port);
-console.log('server is listening at port ${port}');
+console.log(`server is listening at port ${port}`);
 
 
 
